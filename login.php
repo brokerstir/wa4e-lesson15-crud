@@ -2,13 +2,13 @@
 session_start();
 
 if ( isset($_POST['cancel'] ) ) {
-    // Redirect the browser to game.php
+    // Redirect the browser to index.php
     header("Location: index.php");
     return;
 }
 
 $salt = 'XyZzy12*_';
-$stored_hash = 'a8609e8d62c043243c4e201cbb342862';  // Pw is meow123
+$stored_hash = 'a8609e8d62c043243c4e201cbb342862';  // Pw is meow123 or php123
 $secret = 'php123';
 
 // Check to see if we have some POST data, if we do process it
@@ -16,12 +16,14 @@ if ( isset($_POST['email']) && isset($_POST['pass']) ) {
 
     unset($_SESSION["email"]);  // Logout current user
 
+    // check if email and pw are entered
     if ( strlen($_POST['email']) < 1 || strlen($_POST['pass']) < 1 ) {
 
         $_SESSION["error"] = "Email and password are required";
         header( 'Location: login.php' ) ;
         return;
 
+    // check if email is valid email
     } else if (!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
 
         $_SESSION["error"] = "Email must have an at-sign (@)";
@@ -53,13 +55,15 @@ if ( isset($_POST['email']) && isset($_POST['pass']) ) {
 ?>
 <!DOCTYPE html>
 <html>
+
 <head>
-<?php require_once "bootstrap.php"; ?>
-<title>Robert Risk | Autos Database</title>
+    <?php require_once "bootstrap.php"; ?>
+    <title>Robert Risk | Autos Database</title>
 </head>
+
 <body>
-<div class="container">
-<h1>Please Log In</h1>
+    <div class="container">
+        <h1>Please Log In</h1>
 <?php
 
 if ( isset($_SESSION["error"]) ) {
@@ -67,15 +71,19 @@ if ( isset($_SESSION["error"]) ) {
       unset($_SESSION["error"]);
   }
 ?>
+
+<!-- login Form -->
 <form method="POST">
 
-User Name <input type="text" name="email"><br/>
-Password <input type="text" name="pass"><br/>
+    User Name <input type="text" name="email"><br/>
+    Password <input type="text" name="pass"><br/>
 
-<input type="submit" value="Log In">
-<input type="submit" name="cancel" value="Cancel">
+    <input type="submit" value="Log In">
+    <input type="submit" name="cancel" value="Cancel">
 
 </form>
 
-</div>
+    </div>
 </body>
+
+</html>
