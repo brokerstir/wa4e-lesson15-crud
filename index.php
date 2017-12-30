@@ -3,7 +3,7 @@
 <head>
 
     <!-- home page for autocrud assignment by dr. chuck at wa4e.com -->
-    <title>Robert Risk | Auto Database</title>
+    <title>Broker Stir | Auto Database</title>
     <?php require_once "bootstrap.php"; ?>
 
 </head>
@@ -18,6 +18,6 @@
         </p>
 
     </div>
-    
+
 </body>
 </html>

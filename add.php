@@ -18,7 +18,7 @@ if ( ! isset($_SESSION['email']) ) {
 <!DOCTYPE html>
 <html>
 <head>
-<title>Robert Risk | Tracking Autos</title>
+<title>Broker Stir | Tracking Autos</title>
 <?php
 
 require_once "bootstrap.php";
