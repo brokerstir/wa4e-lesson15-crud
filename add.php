@@ -79,7 +79,7 @@ if ( isset($_SESSION["error"]) ) {
 <form method="post">
 
   <p>Make:<input type="text" name="make" size="40"></p>
-  <p>Make:<input type="text" name="model" size="40"></p>
+  <p>Model:<input type="text" name="model" size="40"></p>
   <p>Year:<input type="text" name="year"></p>
   <p>Mileage:<input type="text" name="mileage"></p>
   <p><input type="submit" name="add" value="Add"/><input type="submit" name="cancel" value="Cancel"></p>
