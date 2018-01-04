@@ -51,3 +51,5 @@ CREATE TABLE autos (
    year INTEGER,
    mileage INTEGER
 );
+
+NOTE: There is also a require once for a pdo_db_live.php file. This file is not included in the repo as it contains database credentials for database on live server.
